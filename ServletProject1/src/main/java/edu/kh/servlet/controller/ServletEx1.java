@@ -21,6 +21,9 @@ public class ServletEx1 extends HttpServlet {
         
         
         
+        
+        
+        
         // 요청 시 함께 전달된 input 태그의 값(== Parameter)을 얻어오는 방법
         
         // req.getParameter("input 태그의 name 속성 값");

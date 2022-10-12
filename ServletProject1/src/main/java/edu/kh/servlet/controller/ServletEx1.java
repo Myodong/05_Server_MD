@@ -19,6 +19,8 @@ public class ServletEx1 extends HttpServlet {
         System.out.println("이름, 나이를 제출 받아서 처리할 코드 수행1");
         
         
+        
+        
         // 요청 시 함께 전달된 input 태그의 값(== Parameter)을 얻어오는 방법
         
         // req.getParameter("input 태그의 name 속성 값");

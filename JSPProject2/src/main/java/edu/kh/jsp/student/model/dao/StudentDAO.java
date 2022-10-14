@@ -132,30 +132,4 @@ public class StudentDAO {
 
 
 
-	public int inputDispatcher(Connection conn, String inputDept) throws Exception {
-				int result = 0;
-				
-				try {
-					String sql = prop.getProperty("idDupCheck");
-					
-					pstmt = conn.prepareStatement(sql);
-					
-					pstmt.setString(1, inputDept);
-					
-					rs = pstmt.executeQuery();
-					
-				while (rs.next()) {
-					
-				}
-					
-					
-					
-				}finally {
-					close(rs);
-					close(pstmt);
-				}
-				
-				return result;
-	}
-
 }

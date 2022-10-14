@@ -18,6 +18,13 @@ public class Student {
 		this.deoartmentName = deoartmentName;
 	}
 
+	
+
+	public Student(String studentAddress) {
+		super();
+		this.studentAddress = studentAddress;
+	}
+
 
 	public String getStudentNo() {
 		return studentNo;

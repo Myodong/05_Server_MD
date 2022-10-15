@@ -16,7 +16,7 @@
             <th>학번</th>
             <th>이름</th>
             <th>학과</th>
-            <th>주소</th>width
+            <th>주소</th>
         </tr>
         <c:forEach var="student" items="${stdList}">
             <tr>

@@ -30,7 +30,7 @@ public class MainServlet extends HttpServlet{
 			// key = "boardTypeMap"
 			// value = boardTypeMap이 참조하는 객체를 속성으로 세팅
 			ServletContext application = req.getServletContext();
-			req.setAttribute("boardTypeMap", boardTypeMap);
+			application.setAttribute("boardTypeMap", boardTypeMap);
 			
 			// main.jsp로 요청 위임
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/common/main.jsp");

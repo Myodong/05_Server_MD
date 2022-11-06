@@ -13,19 +13,18 @@ import edu.kh.project.member.model.service.MemberService;
 import edu.kh.project.member.model.vo.Member;
 
 @WebServlet("/member/myPage/info")
-public class MyPageInforServlet extends HttpServlet {
-
+public class MyPageInfoServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
 		req.getRequestDispatcher("/WEB-INF/views/member/myPage-info.jsp").forward(req, resp);
 	}
+
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		// 인코딩 필터로 문자 인코딩 처리 
+
+		// 인코딩 필터로 문자 인코딩 처리
 		
 		// 파라미터 얻어오기
 		String memberNickname = req.getParameter("memberNickname");
@@ -33,8 +32,8 @@ public class MyPageInforServlet extends HttpServlet {
 		
 		String[] arr = req.getParameterValues("memberAddress");
 		
-		String memberAddress=null;
-		if (!arr[0].equals("") && !arr[1].equals("")) {
+		String memberAddress = null;
+		if(!arr[0].equals("") && !arr[1].equals("")) {
 			memberAddress = String.join(",,", arr);
 		}
 		
@@ -47,21 +46,25 @@ public class MyPageInforServlet extends HttpServlet {
 		
 		int memberNo = loginMember.getMemberNo();
 		
+		
 		// Member객체를 생성해서 Update에 필요한 값 세팅
 		Member member = new Member();
+		
 		member.setMemberNo(memberNo);
 		member.setMemberNickname(memberNickname);
 		member.setMemberTel(memberTel);
 		member.setMemberAddress(memberAddress);
 		
+		
 		try {
-			
 			
 			int result = new MemberService().updateMember(member);
 						// MemberService 객체를 1회성 사용
 			
+			
 			String message = null;
-			if (result > 0) { // 성공
+			
+			if(result > 0) { // 성공
 				message = "회원 정보가 수정되었습니다.";
 				
 				// DB 데이터 수정 성공 시
@@ -72,16 +75,18 @@ public class MyPageInforServlet extends HttpServlet {
 				loginMember.setMemberAddress(memberAddress);
 				
 				
-			} else { // 실패
-				message = "회원 정보가 수정 실패";
-
+			}else { // 실패
+				message = "회원 정보 수정 실패 ㅠㅠ";
 			}
+			
 			session.setAttribute("message", message);
 			
 			// 성공/실패 관계없이 내 정보 페이지 재요청
 			resp.sendRedirect("/member/myPage/info");
 			
-		} catch (Exception e) {
+			
+			
+		}catch (Exception e) {
 			e.printStackTrace();
 			
 			String errorMessage = "회원 정보 수정 중 문제가 발생했습니다.";
@@ -92,15 +97,16 @@ public class MyPageInforServlet extends HttpServlet {
 			String path = "/WEB-INF/views/common/error.jsp";
 			
 			req.getRequestDispatcher(path).forward(req, resp);
+			
 		}
 		
-		
-		
-		
-		
-		
-		
 	}
+	
+	
+	
+	
+	
+	
 	
 	
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +10,8 @@
     <title>회원가입</title>
 
     <link rel="stylesheet" href="/resources/css/main-style.css">
+
     <link rel="stylesheet" href="/resources/css/signUp-style.css">
-    
 </head>
 <body>
     <main>
@@ -99,17 +100,19 @@
 
                 <div class="signUp-input-area">
                     <input type="text" name="memberAddress" id="sample6_postcode" 
-                    placeholder="우편번호" maxlength="6">
+                        placeholder="우편번호" maxlength="6">
                     
                     <button type="button" onclick="sample6_execDaumPostcode()">검색</button>
                 </div>
 
                 <div class="signUp-input-area">
-                    <input type="text" name="memberAddress" id="sample6_address" placeholder="도로명/지번 주소">
+                    <input type="text" name="memberAddress" 
+                        id="sample6_address" placeholder="도로명/지번 주소">
                 </div>
 
                 <div class="signUp-input-area">
-                    <input type="text" name="memberAddress"  id="sample6_detailAddress" placeholder="상세 주소">
+                    <input type="text" name="memberAddress" 
+                        id="sample6_detailAddress" placeholder="상세 주소">
                 </div>
 
 
@@ -118,7 +121,9 @@
         </section>
 
     </main>
+
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
         function sample6_execDaumPostcode() {
@@ -146,5 +151,6 @@
             }).open();
         }
     </script>
+
 </body>
 </html>

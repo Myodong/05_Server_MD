@@ -11,17 +11,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 100vh;  
         }
+
         .error-container{
-            width: 800px;
+            width : 800px;
             height: 300px;
             text-align : center;
         }
 
         .error-container > h1{
-            margin: 50px;
+            margin-bottom: 50px;
         }
+
         .error-content-title{
             text-align: left;
             font-weight: bold;
@@ -30,20 +32,24 @@
         .btn-area{
             text-align: center;
         }
+    
     </style>
 </head>
 <body>
     <div class="error-container">
         <h1>${errorMessage}</h1>
 
-        <span class="error-content-title">발생한 예외 : </span>${e}
+        <span class="error-content-title">발생한 예외 : </span> ${e}
         <p>
             자세한 문제 원인은 이클립스 콘솔을 확인해주세요.
         </p>
+
         <div class="btn-area">
             <a href="/">메인 페이지</a>
+
             <button type="button" onclick="history.back()">뒤로가기</button>
         </div>
+
     </div>
 </body>
 </html>

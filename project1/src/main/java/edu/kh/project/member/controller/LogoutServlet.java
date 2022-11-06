@@ -10,21 +10,24 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebServlet("/member/logout")
-public class LogoutServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		// HttpServlet 객체를 얻어와
+	
+		// HttpSesion 객체를 얻어와
 		HttpSession session = req.getSession();
 		
 		// Session을 무효화 하고
-		session.invalidate();
+		session.invalidate(); 
 		
 		// 메인 페이지를 재요청
 		resp.sendRedirect("/");
 		
-		
 	}
+	
+	
+	
+	
 	
 }

@@ -42,10 +42,8 @@ public class JDBCTemplate {
             // Map<String, String> 형태의 객체, XML 입출력 특화
             
             
-            
-            String filePath = JDBCTemplate.class.getResource("/edu/kh/project/sql/driver.xml").getPath();
-            
-            
+            String filePath 
+            	= JDBCTemplate.class.getResource("/edu/kh/project/sql/driver.xml").getPath();
             
             // driver.xml 파일 읽어오기
             prop.loadFromXML( new FileInputStream(filePath) );
@@ -150,9 +148,6 @@ public class JDBCTemplate {
          e.printStackTrace();
       }
    }
-   
-   
-   
    
    
 }

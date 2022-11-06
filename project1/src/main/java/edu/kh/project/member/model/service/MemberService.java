@@ -8,8 +8,7 @@ import edu.kh.project.member.model.dao.MemberDAO;
 import edu.kh.project.member.model.vo.Member;
 
 /** 회원 전용 기능 제공 서비스
- * @author KHD
- *
+ * @author BDH
  */
 public class MemberService {
 
@@ -17,14 +16,14 @@ public class MemberService {
 
 	
 	
-	
 	/** 로그인 Service
 	 * @param member
 	 * @return loginMember
 	 * @throws Exception
 	 */
-	public Member login(Member member) throws Exception {
-		Connection conn = getConnection();
+	public Member login(Member member) throws Exception{
+
+		Connection conn = getConnection(); 
 		
 		Member loginMember = dao.login(conn, member);
 		
@@ -35,26 +34,24 @@ public class MemberService {
 
 
 
-
-	/** 회원가입 Service
+	/** 회원가입 서비스
 	 * @param member
 	 * @return result
 	 * @throws Exception
 	 */
 	public int signUp(Member member) throws Exception {
+		
 		Connection conn = getConnection();
 		
 		int result = dao.signUp(conn, member);
 		
-		if(result > 0)	commit(conn);
-		else			rollback(conn);
-		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
 		
 		close(conn);
 		
 		return result;
 	}
-
 
 
 
@@ -65,9 +62,9 @@ public class MemberService {
 	 */
 	public int updateMember(Member member) throws Exception {
 		
-		Connection conn =getConnection();
+		Connection conn = getConnection();
 		
-		int result =dao.updateMember(conn,member);
+		int result = dao.updateMember(conn, member);
 		
 		if(result > 0)	commit(conn);
 		else			rollback(conn);
@@ -76,4 +73,13 @@ public class MemberService {
 		
 		return result;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

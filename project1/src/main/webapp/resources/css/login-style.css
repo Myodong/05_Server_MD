@@ -1,20 +1,20 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* vh : viewport heigth 
+    /* vh : viewport height
             현재 기기(브라우저)의 높이
             % 단위로 지정
     */
 }
+
 
 main .logo-area{
     text-align: center;
@@ -31,7 +31,7 @@ main .logo-area{
 }
 
 .input-box input{
-    border:none;
+    border : none;
     border-bottom: 2px solid black;
     width: 100%;
     padding: 15px 10px;
@@ -40,9 +40,11 @@ main .logo-area{
 
 
 .input-box input:focus{
-    outline: 0ch;
+    outline: none;
     border-bottom-color: lightblue;
 }
+
+
 
 .login-btn{
     cursor: pointer;
@@ -60,8 +62,7 @@ main .logo-area{
     transform: scale(0.95);
 }
 
-/* 아이디 저장  */
-#saveId{display: none;} /* 체크박스 숨기기 */
+#saveId{ display: none; }
 
 #saveId + label{
     display: flex;
@@ -69,7 +70,7 @@ main .logo-area{
 }
 
 #saveId + label > i{
-    display:  flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 
@@ -91,6 +92,7 @@ main .logo-area{
     border-color: #455ba8;
     color: white;
 }
+
 
 .saveId-area{
     margin-top: 10px;

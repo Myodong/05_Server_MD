@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isErrorPage="true"  %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+pageEncoding="UTF-8"  isErrorPage="true" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,17 +13,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 100vh;  
         }
+
         .error-container{
-            width: 800px;
+            width : 800px;
             height: 300px;
             text-align : center;
         }
 
         .error-container > h1{
-            margin: 50px;
+            margin-bottom: 50px;
         }
+
         .error-content-title{
             text-align: left;
             font-weight: bold;
@@ -30,6 +34,7 @@
         .btn-area{
             text-align: center;
         }
+    
     </style>
 </head>
 <body>
@@ -41,6 +46,7 @@
         <div class="btn-area">
             <a href="/">메인 페이지</a>
         </div>
+
     </div>
 </body>
 </html>
